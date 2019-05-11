@@ -31,7 +31,7 @@ function allItems() {
 // The app should then prompt users with two messages.
 function start() {
   inquirer
-    .prompt(
+    .prompt([
       {
         name: "idNumber",
         type: "input",
@@ -39,17 +39,17 @@ function start() {
         message: "What would you like to buy? Choose the item you would like to purchase by inputting the ID number of that item.",
       },
       {
-        name: "quantity",
+        name: "quantityNumber",
         type: "input",
         // The second message should ask how many units of the product they would like to buy.
-        message: "Awesome! How many would you like?",
+        message: "Awesome! How many would you like?"
       }
-    ) .then(function(answer) {
+    ]) .then(function(answer) {
       // Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
+
+      // If not, the app should log a phrase like Insufficient quantity!, and then prevent the order from going through.
+      // However, if your store does have enough of the product, you should fulfill the customer's order.
+      // This means updating the SQL database to reflect the remaining quantity.
+      // Once the update goes through, show the customer the total cost of their purchase.
     });
 }
-// If not, the app should log a phrase like Insufficient quantity!, and then prevent the order from going through.
-// However, if your store does have enough of the product, you should fulfill the customer's order.
-
-// This means updating the SQL database to reflect the remaining quantity.
-// Once the update goes through, show the customer the total cost of their purchase.
