@@ -44,7 +44,7 @@ function start() {
       message: "Awesome! How many would you like?"
     }
   ]).then(function(answer) {
-    var query = "SELECT id, stock_quantity FROM products WHERE ?";
+    var query = "SELECT * FROM products WHERE ?";
     connection.query(query, { id: answer.IdNumber }, function(err, res) {
       if(err){console.log(err)};
       // Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
